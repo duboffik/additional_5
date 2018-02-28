@@ -24,7 +24,7 @@ module.exports = function check(str, bracketsConfig) {
 
             lastBracketPos2 = stroka.lastIndexOf(pair[i][0]);
             if (pair[i][0] == pair[i][1]) {
-                lastBracketPos2 = stroka.substr(lastBracketPos2).lastIndexOf(pair[0][0]);
+                lastBracketPos2 = stroka.substr(lastBracketPos2).lastIndexOf(pair[i][0]);
             }
             if (lastBracketPos2 > lastBracketPos) {
                 lastBracketPos = lastBracketPos2;

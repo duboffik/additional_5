@@ -1,6 +1,5 @@
-var stroka = '111115611111111222288888822225577877778775555666677777777776622222';
-//stroka = '[{}]'
-var pair = [['1', '2'], ['3', '4'], ['5', '6'], ['7', '7'], ['8', '8']];
+var stroka = '|()|';
+var pair = [['(', ')'], ['|', '|']];
 
 var fal = 'false';
 var lastBracketPos, lastBracketPos2, i = 0;
@@ -15,15 +14,17 @@ while ((stroka.length > 0)&&(fal == 'false')) {
 
         targ = pair[0][1];
 
-
-
-        for (i = 0; i<pair.length; i++) {
+        for (i = 1; i<pair.length; i++) {
             var lastBracketPos2 = stroka.lastIndexOf(pair[i][0]);
             if (pair[i][0] == pair[i][1]) {
-                lastBracketPos2 = stroka.substr(lastBracketPos2).lastIndexOf(pair[0][0]);
+                console.log ('&&&& ' + stroka.substr(lastBracketPos))
+                lastBracketPos2 = stroka.substr(lastBracketPos2).lastIndexOf(pair[i][0]);
+                console.log ('$$$ ' + stroka.substr(lastBracketPos2).lastIndexOf(pair[0][0]));
             }
+            console.log(lastBracketPos2 + '****' + lastBracketPos);
           if (lastBracketPos2 > lastBracketPos) {
-              lastBracketPos = stroka.lastIndexOf(pair[i][0]);
+
+              lastBracketPos = lastBracketPos2;
               targ = pair[i][1];
           }
         }
